@@ -1,0 +1,12 @@
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\TetrisControlProject\bin\Release\TetrisControlProject.dll
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\TetrisControlProject\bin\Release\TetrisControlProject.pdb
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\TetrisControlProject\obj\Release\TetrisControlProject.csprojResolveAssemblyReference.cache
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\TetrisControlProject\obj\Release\TetrisControlProject.dll
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\TetrisControlProject\obj\Release\TetrisControlProject.pdb
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\TetrisControlProject\bin\Release\TetrisControlProject.xml
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\TetrisControlProject\bin\Release\TetrisControlProject.xml
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\TetrisControlProject\bin\Release\TetrisControlProject.dll
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\TetrisControlProject\bin\Release\TetrisControlProject.pdb
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\TetrisControlProject\obj\Release\TetrisControlProject.csprojResolveAssemblyReference.cache
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\TetrisControlProject\obj\Release\TetrisControlProject.dll
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\TetrisControlProject\obj\Release\TetrisControlProject.pdb

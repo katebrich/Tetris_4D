@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="TetrisControlProject.Interfaces.ITetrisController">
+    <Position X="0.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAgogAAgAAAEIIAAAAAAAAiAAAAAAAAAAAAAAAEAAI=</HashCode>
+      <FileName>Interfaces\ITetrisController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TetrisControlProject.Interfaces.IPiece">
+    <Position X="6" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAABAAAAAAAAAACAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IPiece.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TetrisControlProject.Interfaces.IPieceGenerator">
+    <Position X="7.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IPieceGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TetrisControlProject.Interfaces.IScoreProvider">
+    <Position X="7.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Interfaces\IScoreProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TetrisControlProject.Interfaces.ITetrisBox">
+    <Position X="2.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAKCAAAAAAAAAACAAAAAAAQAAAAAAkAAAAAA=</HashCode>
+      <FileName>Interfaces\ITetrisBox.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TetrisControlProject.Interfaces.ILevelProvider">
+    <Position X="6" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAgAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Interfaces\ILevelProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TetrisControlProject.Interfaces.ILevelSettings">
+    <Position X="7.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAACAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ILevelSettings.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TetrisControlProject.Interfaces.ITetrisGrid">
+    <Position X="4.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAEAAhAADAACgAAAAAAAAAAACIACCAAAEAACAgBCAAA=</HashCode>
+      <FileName>Interfaces\ITetrisGrid.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
