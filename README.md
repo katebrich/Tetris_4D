@@ -8,6 +8,7 @@ It is also possible to save your progress and load the game later.
 ## Installation
 No installation needed - simply run the Release/Tetris4D.exe file.  
 
+## Notes
 This game was created as a semestral programming project in the second year of my Bachelors studies. I didn't know much about programming principles back then - the code would need much refactoring. I hope I get back to it some day.
 
 The documentation is unfortunatelly available only in Czech, but the comments in code should help a lot.
