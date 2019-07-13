@@ -1,0 +1,3 @@
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\obj\Debug\Tetris.csprojResolveAssemblyReference.cache
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\obj\Debug\Tetris4D.Properties.Resources.resources
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\obj\Debug\Tetris.csproj.GenerateResource.Cache

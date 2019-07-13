@@ -1,0 +1,36 @@
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\bin\Release\Tetris4D.exe.config
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\bin\Release\Tetris4D.exe
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\bin\Release\Tetris4D.pdb
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\bin\Release\TetrisControlProject.dll
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\bin\Release\TetrisControlProject.pdb
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\obj\Release\Tetris4D.csprojResolveAssemblyReference.cache
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\obj\Release\Tetris4D.Properties.Resources.resources
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\obj\Release\Tetris4D.csproj.GenerateResource.Cache
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\obj\Release\Tetris4D.exe
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\obj\Release\Tetris4D.pdb
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\obj\Release\Tetris4D.Forms.AskNameForm.resources
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\obj\Release\Tetris4D.Forms.Top10ScoreViewForm.resources
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\obj\Release\Tetris4D.Forms.GameForm.resources
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\obj\Release\Tetris4D.Forms.MenuForm.resources
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\obj\Release\Tetris4D.Forms.TetrisMessageBox.resources
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\obj\Release\Tetris4D.Forms.ControlsForm.resources
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\bin\Release\Tetris4D.xml
+C:\Users\Káč\Documents\Visual Studio 2017\Projects\Tetris4D\Tetris4D\bin\Release\TetrisControlProject.xml
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\bin\Release\Tetris4D.exe.config
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\bin\Release\Tetris4D.xml
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\bin\Release\Tetris4D.exe
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\bin\Release\Tetris4D.pdb
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\bin\Release\TetrisControlProject.dll
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\bin\Release\TetrisControlProject.pdb
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\bin\Release\TetrisControlProject.xml
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\obj\Release\Tetris4D.csprojResolveAssemblyReference.cache
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\obj\Release\Tetris4D.Forms.AskNameForm.resources
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\obj\Release\Tetris4D.Forms.ControlsForm.resources
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\obj\Release\Tetris4D.Forms.GameForm.resources
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\obj\Release\Tetris4D.Forms.MenuForm.resources
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\obj\Release\Tetris4D.Forms.TetrisMessageBox.resources
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\obj\Release\Tetris4D.Properties.Resources.resources
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\obj\Release\Tetris4D.Forms.Top10ScoreViewForm.resources
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\obj\Release\Tetris4D.csproj.GenerateResource.Cache
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\obj\Release\Tetris4D.exe
+C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\Tetris4D\obj\Release\Tetris4D.pdb
