@@ -811,7 +811,7 @@ namespace Tetris4D.Forms
                 formatter.Serialize(writer, storage);
                 succeeded = true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 new TetrisMessageBox(Messages.ErrorSavingScores, Messages.Error, TetrisMesBoxStyleEnum.Error, TetrisMesBoxButtonsEnum.OK).Show();
             }
@@ -879,7 +879,7 @@ namespace Tetris4D.Forms
                 formatter.Serialize(writer, settings);
                 succeeded = true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
             }
             finally
@@ -947,7 +947,7 @@ namespace Tetris4D.Forms
                 formatter.Serialize(writer, controller);
                 succeeded = true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 succeeded = false;
             }

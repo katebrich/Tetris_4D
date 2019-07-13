@@ -1,0 +1,1017 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tetris4D</name>
+    </assembly>
+    <members>
+        <member name="T:Tetris4D.BasicScoreStorage">
+            <summary>
+            Stores saved scores.
+            </summary>
+        </member>
+        <member name="P:Tetris4D.BasicScoreStorage.sortedScoreSet">
+            <summary>
+            Gets all scores sorted.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.BasicScoreStorage.#ctor">
+            <summary>
+            A constructor.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.BasicScoreStorage.AddScore(Tetris4D.ScoreItem)">
+            <summary>
+            And another score item.
+            </summary>
+            <param name="score"></param>
+        </member>
+        <member name="M:Tetris4D.BasicScoreStorage.GetHighScore">
+            <summary>
+            Gets the highest score saved in the storage.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tetris4D.Forms.AskNameForm">
+            <summary>
+            Form that asks client for his name to save the score.
+            </summary>
+        </member>
+        <member name="P:Tetris4D.Forms.AskNameForm._Name">
+            <summary>
+            Clients name to return from this form.
+            </summary>
+        </member>
+        <member name="F:Tetris4D.Forms.AskNameForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.AskNameForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Tetris4D.Forms.AskNameForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Tetris4D.Forms.ControlsForm">
+            <summary>
+            Keyboard settings form.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.ControlsForm.#ctor(Tetris4D.IKeysSettings)">
+            <summary>
+            A constructor.
+            Creates close button.
+            Sets texts on buttons.
+            </summary>
+            <param name="settings"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.ControlsForm.GetNewSettings">
+            <summary>
+            Returns new keysSettings obtained from texts on buttons.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.Forms.ControlsForm.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)">
+            <summary>
+            Takes care of press key events
+            </summary>
+            <param name="msg"></param>
+            <param name="keyData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.Forms.ControlsForm.initMessages">
+            <summary>
+            Initializes texts in form.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.ControlsForm.btClose_Click(System.Object,System.EventArgs)">
+            <summary>
+            Closes the window.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.ControlsForm.btDefault_Click(System.Object,System.EventArgs)">
+            <summary>
+            Sets default key settings on buttons.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.ControlsForm.setButtons(Tetris4D.IKeysSettings)">
+            <summary>
+            Sets buttons texts according to given settings.
+            </summary>
+            <param name="settings"></param>
+        </member>
+        <member name="F:Tetris4D.Forms.ControlsForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.ControlsForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Tetris4D.Forms.ControlsForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Tetris4D.Forms.GameForm">
+            <summary>
+            The grid, next piece and score are displayed in this form.
+            Communicates with the game controller.
+            Reacts on keyboard inputs.
+            Can start, end, pause and unpause the game.
+            </summary>
+        </member>
+        <member name="P:Tetris4D.Forms.GameForm.Controller">
+            <summary>
+            The game controller.
+            </summary>
+        </member>
+        <member name="P:Tetris4D.Forms.GameForm.IsGameOver">
+            <summary>
+            Tells if the game ended.
+            </summary>
+        </member>
+        <member name="P:Tetris4D.Forms.GameForm.IsSaved">
+            <summary>
+            Tells if the current game progress is saved.
+            </summary>
+        </member>
+        <member name="P:Tetris4D.Forms.GameForm.KeysSettings">
+            <summary>
+            Keyboard settings.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.#ctor(TetrisControlProject.Interfaces.ITetrisController)">
+            <summary>
+            A constructor.
+            Creates viewController.
+            Sets the game controller.
+            </summary>
+            <param name="controller"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.StartGame">
+            <summary>
+            Tells controller to start the game.
+            Starts the keyListener timer and pieceShiftTimer.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.EndGame">
+            <summary>
+            Stops the timers.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.Pause">
+            <summary>
+            Pause the controller.
+            Stops the timers.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.Unpause">
+            <summary>
+            Unpauses the controller.
+            Starts the timers.
+            Shows the form.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.SetHighScore(System.Int32)">
+            <summary>
+            Sets high score to the viewController.
+            </summary>
+            <param name="score"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.GetTotalScore">
+            <summary>
+            Returns total score achieved in this game so far from the controller.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.initMessages">
+            <summary>
+            Initializes texts for this form.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.controller_TimerIntervalChanged(System.Object,TetrisControlProject._EventArgs.TimerIntervalChangedEventArgs)">
+            <summary>
+            When interval for the timer changes in controller, it tells it to the timer.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.controller_GameOver(System.Object,TetrisControlProject._EventArgs.GameOverEventArgs)">
+            <summary>
+            If controller tells the game is over, it ends the game.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.viewController_ViewChanged(System.Object,System.EventArgs)">
+            <summary>
+            Invalidate the form after view change.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.keyListener_Tick(System.Object,System.EventArgs)">
+            <summary>
+            When keyListener timer ticks, checks if any key is held and tells the controller to process this keypress.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.pieceShiftTimer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            If the pieceShiftTimer ticks, it tells it to the controller.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)">
+            <summary>
+            Processes key press.
+            </summary>
+            <param name="msg"></param>
+            <param name="keyData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.GameWindow_KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            processes keyUp event.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.GameWindow_ClientSizeChanged(System.Object,System.EventArgs)">
+            <summary>
+            When size is changed, it tells the viewController to resize its components.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.btMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            Closes the form.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.GameWindow_Resize(System.Object,System.EventArgs)">
+            <summary>
+            If the form is minimized, the game is paused.
+            If the form is resized, tells the viewController to resize its components.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Tetris4D.Forms.GameForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Tetris4D.Forms.GameForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Tetris4D.Forms.TetrisMessageBox">
+            <summary>
+            Form used for displaying messages to client.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.TetrisMessageBox.#ctor(System.String,System.String,Tetris4D.TetrisMesBoxStyleEnum,Tetris4D.TetrisMesBoxButtonsEnum)">
+            <summary>
+            A constructor.
+            </summary>
+            <param name="message">Message to display</param>
+            <param name="heading">Short message displayed on the top of the form.</param>
+            <param name="style">Style decides message box icon and color of components.</param>
+            <param name="buttons">Buttons decides visibility and texts of buttons.</param>
+        </member>
+        <member name="M:Tetris4D.Forms.TetrisMessageBox.setButtons(Tetris4D.TetrisMesBoxButtonsEnum)">
+            <summary>
+            Sets buttons texts and visibility
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.TetrisMessageBox.setStyle(Tetris4D.TetrisMesBoxStyleEnum)">
+            <summary>
+            Sets the icon and color.
+            </summary>
+            <param name="style"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.TetrisMessageBox.createView">
+            <summary>
+            Sets proportions of components. Creates view.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.TetrisMessageBox.createBackground">
+            <summary>
+            Creates background for the whole form.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Tetris4D.Forms.TetrisMessageBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.TetrisMessageBox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Tetris4D.Forms.TetrisMessageBox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Tetris4D.Forms.MenuForm">
+            <summary>
+            Controls the game window, sets its properties.
+            Starts new game.
+            Saves current game progress, loads saved games.
+            Handles saving score and showing best score table.
+            Handles keyboard settings.
+            Is hidden when game form is visible and is active when game form is closed.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.#ctor">
+            <summary>
+            A constructor.
+            Deserializes score and keyboard settings.
+            Creates view of this form and adjusts the size.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.initMessages">
+            <summary>
+            Sets texts for this form.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.createView">
+            <summary>
+            Creates view of this form.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tetris4D.Forms.MenuForm.PointsColorPair">
+            <summary>
+            A helper struct for creating view.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.drawPieces(System.Drawing.Bitmap)">
+            <summary>
+            Draws pieces displayed on the background of the form.
+            </summary>
+            <param name="formViewBitmap"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.drawButtonsEdges(System.Drawing.Bitmap)">
+            <summary>
+            Draws colourful squares on the sides of the buttons.
+            </summary>
+            <param name="formViewBitmap"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.setButtons">
+            <summary>
+            Sets buttons locations, sizes and fonts.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.drawBackground(System.Drawing.Color,System.Drawing.Bitmap)">
+            <summary>
+            Fills the bitmap with one color.
+            </summary>
+            <param name="color"></param>
+            <param name="formViewBitmap"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.drawTetrisSign(System.Drawing.Bitmap)">
+            <summary>
+            Draws the Tetris sign on the bitmap.
+            </summary>
+            <param name="formViewBitmap"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.btNewGame_Click(System.Object,System.EventArgs)">
+            <summary>
+            Checks if there is unsaved game and asks for saving it.
+            Ends current game.
+            Initializes and starts new game.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.initGame(TetrisControlProject.Interfaces.ITetrisController)">
+            <summary>
+            Creates new game form with given controller.
+            Sets properties of the game form needed for starting the game.
+            Shows the game form and hides itself.
+            </summary>
+            <param name="controller"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.MenuWindow_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+            <summary>
+            Warns if there is unsaved game.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.gameForm_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+            <summary>
+            If game is not over yet, instead of closing the game form only pauses and hides it.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.gameForm_FormClosed(System.Object,System.Windows.Forms.FormClosedEventArgs)">
+            <summary>
+            Disables Continue button. Adds new score. Shows menu form.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.gameForm_VisibleChanged(System.Object,System.EventArgs)">
+            <summary>
+            If game form hides, it shows menu form and enables Continue button.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.btContinue_Click(System.Object,System.EventArgs)">
+            <summary>
+            Continues the game.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.btShowScore_Click(System.Object,System.EventArgs)">
+            <summary>
+            Displays form that shows score table.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.btEnd_Click(System.Object,System.EventArgs)">
+            <summary>
+            Closes the form.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.btSave_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles saving current game.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.btLoadGame_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles loading saved game.
+            Warns if there is unsaved game.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.btControls_Click(System.Object,System.EventArgs)">
+            <summary>
+            Shows form to change keyboard settings. If settings are changed, saves the change.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.addNewScore">
+            <summary>
+            Shows form that asks clients name.
+            Saves score to the storage.
+            Serializes the storage.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.serializeScoreStorage(Tetris4D.IScoreStorage,System.String)">
+            <summary>
+            Serializes given IScoreStorage instance to the given path using MyFormatter.
+            </summary>
+            <param name="storage"></param>
+            <param name="path"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.deserializeScoreStorage(System.String)">
+            <summary>
+            Returns IScoreStorage deserialized from the given path. Uses MyFormatter.
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.serializeKeysSettings(Tetris4D.IKeysSettings,System.String)">
+            <summary>
+            Serializes given IKeysSettings instance to the given path using MyFormatter.
+            </summary>
+            <param name="settings"></param>
+            <param name="path"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.deserializeKeysSettings(System.String)">
+            <summary>
+            Returns IKeysSettings deserialized from the given path. Uses MyFormatter.
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.serializeController(TetrisControlProject.Interfaces.ITetrisController,System.String)">
+            <summary>
+            Serializes given ITetrisController instance to the given path using MyFormatter.
+            </summary>
+            <param name="controller"></param>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.deserializeController(System.String,TetrisControlProject.Interfaces.ITetrisController@)">
+            <summary>
+            Deserializes ITetrisController from the given path. Uses MyFormatter.
+            </summary>
+            <param name="path"></param>
+            <param name="contr"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Tetris4D.Forms.MenuForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Tetris4D.Forms.MenuForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Tetris4D.Forms.Top10ScoreViewForm">
+            <summary>
+            Form to display top 10 score items from given score set.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.Top10ScoreViewForm.#ctor(System.Collections.Generic.SortedSet{Tetris4D.ScoreItem})">
+            <summary>
+            A constructor.
+            </summary>
+            <param name="scoreSet"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.Top10ScoreViewForm.createView">
+            <summary>
+            Creates bitmap to display.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.Top10ScoreViewForm.drawBackground(System.Drawing.Color)">
+            <summary>
+            Draws one-color background on the bitmap.
+            </summary>
+            <param name="color"></param>
+        </member>
+        <member name="M:Tetris4D.Forms.Top10ScoreViewForm.drawGrid">
+            <summary>
+            Draws score table using tetris square image.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.Top10ScoreViewForm.drawScoreSign">
+            <summary>
+            Draws the Score heading.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.Top10ScoreViewForm.drawScores">
+            <summary>
+            Draws top 10 scores into table
+            </summary>
+        </member>
+        <member name="F:Tetris4D.Forms.Top10ScoreViewForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Forms.Top10ScoreViewForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Tetris4D.Forms.Top10ScoreViewForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Tetris4D.IKeysSettings">
+            <summary>
+            Represents keyboard settings used in game.
+            </summary>
+        </member>
+        <member name="T:Tetris4D.IScoreStorage">
+            <summary>
+            Stores all saved scores.
+            </summary>
+        </member>
+        <member name="P:Tetris4D.IScoreStorage.sortedScoreSet">
+            <summary>
+            Gets all scores sorted.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.IScoreStorage.AddScore(Tetris4D.ScoreItem)">
+            <summary>
+            Adds another score item.
+            </summary>
+            <param name="score"></param>
+        </member>
+        <member name="M:Tetris4D.IScoreStorage.GetHighScore">
+            <summary>
+            Gets the highest score saved in the storage.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tetris4D.Messages">
+            <summary>
+            Messages for UI.
+            </summary>
+        </member>
+        <member name="T:Tetris4D.MyFormatter">
+            <summary>
+            Formatter, using reflection to serialize or deserialize objects.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.MyFormatter.Serialize(System.IO.TextWriter,System.Object)">
+            <summary>
+            Serializes given object using given writer.
+            </summary>
+            <param name="writer"></param>
+            <param name="graph"></param>
+        </member>
+        <member name="M:Tetris4D.MyFormatter.Deserialize(System.IO.TextReader)">
+            <summary>
+            Deserializes object from given reader and returns the result.
+            </summary>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.MyFormatter.callOnDeserialized(System.Object)">
+            <summary>
+            Finds methods with OnDeserialized attribute and calls them.
+            </summary>
+            <param name="deserializedObject"></param>
+        </member>
+        <member name="M:Tetris4D.MyFormatter.callOnDeserializing(System.Object)">
+            <summary>
+            Finds methods with OnDeserializing attribute and calls them.
+            </summary>
+            <param name="deserializedObject"></param>
+        </member>
+        <member name="M:Tetris4D.MyFormatter.callOnSerialized(System.Object)">
+            <summary>
+            Finds methods with OnSerialized attribute and calls them.
+            </summary>
+            <param name="serializedObject"></param>
+        </member>
+        <member name="M:Tetris4D.MyFormatter.callOnSerializing(System.Object)">
+            <summary>
+            Finds methods with OnSerializing attribute and calls them.
+            </summary>
+            <param name="serializedObject"></param>
+        </member>
+        <member name="M:Tetris4D.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:Tetris4D.ScoreComparer">
+            <summary>
+            Score comparer comparing score items first by score from highest to lowest, then by date and then by name.
+            </summary>
+        </member>
+        <member name="T:Tetris4D.ScoreItem">
+            <summary>
+            Represents one score achieved in a game.
+            </summary>
+        </member>
+        <member name="P:Tetris4D.ScoreItem.Score">
+            <summary>
+            Value of score.
+            </summary>
+        </member>
+        <member name="P:Tetris4D.ScoreItem.Name">
+            <summary>
+            Name of the player.
+            </summary>
+        </member>
+        <member name="P:Tetris4D.ScoreItem.Date">
+            <summary>
+            Date of achieving this score.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.ScoreItem.#ctor(System.Int32,System.String,System.DateTime)">
+            <summary>
+            A constructor.
+            </summary>
+            <param name="score"></param>
+            <param name="name"></param>
+            <param name="date"></param>
+        </member>
+        <member name="M:Tetris4D.TetrisSquareImage.GetTetrisSquareImage(System.Drawing.Color,System.Int32,System.Int32)">
+            <summary>
+            Returns bitmap with given proportions with tetris square drawn in given color. 
+            </summary>
+            <param name="color"></param>
+            <param name="squareHeight"></param>
+            <param name="squareWidth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.TetrisSquareImage.colorRect(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Computes coefficients for multiplying the RGB values to make color lighter or darker on corresponding pixels.
+            </summary>
+            <param name="color"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tetris4D.UserKeysSettings">
+            <summary>
+            Represents keyboard settings used in game.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.UserKeysSettings.#ctor(System.Windows.Forms.Keys,System.Windows.Forms.Keys,System.Windows.Forms.Keys,System.Windows.Forms.Keys,System.Windows.Forms.Keys,System.Windows.Forms.Keys)">
+            <summary>
+            A constructor, creates settings from given keys.
+            </summary>
+            <param name="downKey"></param>
+            <param name="upKey"></param>
+            <param name="rightKey"></param>
+            <param name="leftKey"></param>
+            <param name="dropKey"></param>
+            <param name="pauseKey"></param>
+        </member>
+        <member name="M:Tetris4D.UserKeysSettings.#ctor">
+            <summary>
+            A constructor, creates default settings.
+            </summary>
+        </member>
+        <member name="T:Tetris4D.Views.NextPieceView">
+            <summary>
+            Shows next piece and next direction.
+            </summary>
+        </member>
+        <member name="P:Tetris4D.Views.NextPieceView.Font">
+            <summary>
+            Font used in this view.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Views.NextPieceView.GetBitmap(System.Int32,System.Int32,TetrisControlProject._EventArgs.NextPieceChangedEventArgs)">
+            <summary>
+            Gets bitmap with given proportions representing next piece and next direction.
+            </summary>
+            <param name="height"></param>
+            <param name="width"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.Views.NextPieceView.createPieceImage(TetrisControlProject.Interfaces.IPiece,System.Int32,System.Int32)">
+            <summary>
+            Creates picture of given piece.
+            </summary>
+            <param name="piece"></param>
+            <param name="sqWidth">Width of one square of piece</param>
+            <param name="sqHeight">Height of one square of piece</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.Views.NextPieceView.createArrowImage(System.Int32,System.Int32,System.Drawing.Color,TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Creates image of arrow for given direction.
+            </summary>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="color"></param>
+            <param name="direction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.Views.NextPieceView.createNextSign(System.Int32,System.Int32,System.Drawing.Color)">
+            <summary>
+            Creates the Next sign image.
+            </summary>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="color"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tetris4D.Views.ScoreView">
+            <summary>
+            Shows total score, high score and number of destroyed squares.
+            </summary>
+        </member>
+        <member name="P:Tetris4D.Views.ScoreView.Font">
+            <summary>
+            A font used for this view.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Views.ScoreView.GetBitmap(System.Int32,System.Int32,TetrisControlProject._EventArgs.ScoreChangedEventArgs)">
+            <summary>
+            Gets bitmap of given proportions representing the view.
+            </summary>
+            <param name="height"></param>
+            <param name="width"></param>
+            <param name="args">Info about score changes</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.Views.ScoreView.SetHighScore(System.Int32)">
+            <summary>
+            Sets the high score.
+            </summary>
+            <param name="score"></param>
+        </member>
+        <member name="M:Tetris4D.Views.ScoreView.createScoreSign(System.Int32,System.Int32,System.Drawing.Color)">
+            <summary>
+            Creates image of the Score sign with given proportions.
+            </summary>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="color"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tetris4D.Views.GridView">
+            <summary>
+            Shows the tetris grid - draws the color array.
+            </summary>
+        </member>
+        <member name="P:Tetris4D.Views.GridView.Font">
+            <summary>
+            A font used for this view.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Views.GridView.#ctor">
+            <summary>
+            A constructor.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Views.GridView.GetBitmap(System.Int32,System.Int32,TetrisControlProject._EventArgs.GridChangedEventArgs)">
+            <summary>
+            Gets image of given proportions representing this view.
+            </summary>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.Views.GridView.GetPausedBitmap">
+            <summary>
+            Gets paused view - covers all game area with semitransparent label.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.Views.GridView.GetUnpausedBitmap">
+            <summary>
+            Gets bitmap without paused view.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.Views.GridView.GetGameOverBitmap">
+            <summary>
+            Gets game over view - covers all game area with semitransparent label.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.Views.GridView.createFreeSquare(System.Int32,System.Int32)">
+            <summary>
+            Gets image for background square.
+            </summary>
+            <param name="width"></param>
+            <param name="height"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tetris4D.Views.GridView.drawGrid(System.Drawing.Color[0:,0:],System.Drawing.Color,System.Drawing.Color,System.Drawing.Color,System.Int32)">
+            <summary>
+            Draws whole colors array. 
+            </summary>
+            <param name="grid"></param>
+            <param name="bordersColor"></param>
+            <param name="edgesColor"></param>
+            <param name="backgroundColor"></param>
+            <param name="borderSize"></param>
+        </member>
+        <member name="T:Tetris4D.Views.ViewController">
+            <summary>
+            Listens to Controller events and changes views apropriatelly.
+            Sets views of given components.
+            Sets sizes and properties of these components.
+            </summary>
+        </member>
+        <member name="P:Tetris4D.Views.ViewController.HighScore">
+            <summary>
+            Gets or sets the high score.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Views.ViewController.#ctor(TetrisControlProject.Interfaces.ITetrisController,System.Windows.Forms.PictureBox,System.Windows.Forms.PictureBox,System.Windows.Forms.PictureBox,System.Windows.Forms.Label,System.Windows.Forms.Button)">
+            <summary>
+            A cnstructor. 
+            Sets the components.
+            Creates views.
+            Assignes the controller events.
+            </summary>
+            <param name="controller"></param>
+            <param name="pbTetrisGrid"></param>
+            <param name="pbNextPiece"></param>
+            <param name="pbScore"></param>
+            <param name="lblNewScore"></param>
+            <param name="btMenu"></param>
+        </member>
+        <member name="M:Tetris4D.Views.ViewController.RecomputeComponentsProportions(System.Int32,System.Int32)">
+            <summary>
+            Recomputes sizes of all views according to the given width and height of window.
+            </summary>
+            <param name="windowHeight"></param>
+            <param name="windowWidth"></param>
+        </member>
+        <member name="M:Tetris4D.Views.ViewController.setPausedView">
+            <summary>
+            Sets view for pause.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Views.ViewController.setUnpausedView">
+            <summary>
+            Sets view when pause is canceled.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Views.ViewController.initSettings">
+            <summary>
+            Sets needed properties of all components.
+            </summary>
+        </member>
+        <member name="M:Tetris4D.Views.ViewController.controller_GameOver(System.Object,TetrisControlProject._EventArgs.GameOverEventArgs)">
+            <summary>
+            Controls controllers GameOver event. Gets new view.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Views.ViewController.controller_ScoreChangedEvent(System.Object,TetrisControlProject._EventArgs.ScoreChangedEventArgs)">
+            <summary>
+            Controls controllers ScoreChangedEvent. Gets new view. 
+            Animates new score - starts timer.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Views.ViewController.controller_NextPieceChanged(System.Object,TetrisControlProject._EventArgs.NextPieceChangedEventArgs)">
+            <summary>
+            Controls controllers NestPieceChanged event. Gets new view.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Views.ViewController.controller_GridChangedEvent(System.Object,TetrisControlProject._EventArgs.GridChangedEventArgs)">
+            <summary>
+            Controls controller GridChangedEvent. Gets new view.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tetris4D.Views.ViewController.OnTimerEvent(System.Object,System.EventArgs)">
+            <summary>
+            With every tick of timer, the label font size gets bigger.
+            Checks number of steps and if needed, ends the timer.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Tetris4D.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Tetris4D.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Tetris4D.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

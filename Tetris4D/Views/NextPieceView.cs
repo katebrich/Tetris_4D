@@ -13,8 +13,6 @@ namespace Tetris4D.Views
     class NextPieceView
     {
         private Bitmap bitmapToDisplay;
-        private int squareHeight;
-        private int squareWidth;
 
         /// <summary>
         /// Font used in this view.

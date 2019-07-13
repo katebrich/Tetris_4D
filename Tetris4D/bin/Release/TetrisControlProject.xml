@@ -1,0 +1,1074 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TetrisControlProject</name>
+    </assembly>
+    <members>
+        <member name="T:TetrisControlProject.Enums.ControlsEnum">
+            <summary>
+            Represents controls inputs by user.
+            </summary>
+        </member>
+        <member name="T:TetrisControlProject.Enums.DirectionEnum">
+            <summary>
+            Represents directions from where a piece can move.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Helper.ColorMethods.BlendHSB(System.Collections.Generic.List{System.Drawing.Color})">
+            <summary>
+            Blend given colors by creating color with average HSB values.
+            </summary>
+            <param name="colors"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Helper.ColorMethods.Blend(System.Collections.Generic.List{System.Drawing.Color})">
+            <summary>
+            Blend given colors by creating color with average RGB values.
+            </summary>
+            <param name="colors"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Helper.ColorMethods.FromAhsb(System.Int32,System.Single,System.Single,System.Single)">
+            <summary>
+            Creates a Color from alpha, hue, saturation and brightness.
+            </summary>
+            <param name="alpha">The alpha channel value.</param>
+            <param name="hue">The hue value.</param>
+            <param name="saturation">The saturation value.</param>
+            <param name="brightness">The brightness value.</param>
+            <returns>A Color with the given values.</returns>
+        </member>
+        <member name="M:TetrisControlProject.Helper._2DArrayExtension.RotateMatrixCounterClockwise``1(``0[0:,0:])">
+            <summary>
+            Extension. Rotates given 2D array counter clockwise by 90 degrees.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="oldMatrix"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TetrisControlProject._EventArgs.GameOverEventArgs">
+            <summary>
+            Event args for game over.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject._EventArgs.GameOverEventArgs.TotalScore">
+            <summary>
+            Gets the total score achieved in this game.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject._EventArgs.GameOverEventArgs.IsWin">
+            <summary>
+            Tells whether the player won.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject._EventArgs.GameOverEventArgs.#ctor(System.Int32,System.Boolean)">
+            <summary>
+            A constructor.
+            </summary>
+            <param name="totalScore"></param>
+            <param name="win"></param>
+        </member>
+        <member name="T:TetrisControlProject._EventArgs.GridChangedEventArgs">
+            <summary>
+            Event args for changed grid event.
+            Provides color array to draw and colors representing edges, background and borders.
+            </summary>
+        </member>
+        <member name="T:TetrisControlProject._EventArgs.NextPieceChangedEventArgs">
+            <summary>
+            Event args for changed next piece event.
+            Provides info about next piece and next direction.
+            </summary>
+        </member>
+        <member name="T:TetrisControlProject._EventArgs.ScoreChangedEventArgs">
+            <summary>
+            Gets info about total score, newly obtained score and number of destroyed squares.
+            </summary>
+        </member>
+        <member name="T:TetrisControlProject._EventArgs.TimerIntervalChangedEventArgs">
+            <summary>
+            Gets info about new interval for timer.
+            </summary>
+        </member>
+        <member name="T:TetrisControlProject._EventArgs.PiecePlacedEventArgs">
+            <summary>
+            Info about placed piece in tetris box.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject._EventArgs.PiecePlacedEventArgs.GameOver">
+            <summary>
+            Tells whether the game ended by placing this piece.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject._EventArgs.PiecePlacedEventArgs.SquaresDestroyed">
+            <summary>
+            Gets number of squares destroyed by this move.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject._EventArgs.PiecePlacedEventArgs.PieceWentThrough">
+            <summary>
+            Tells whether the piece went through the opposite side of the game area.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject._EventArgs.PiecePlacedEventArgs.Piece">
+            <summary>
+            Gets the placed piece.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject._EventArgs.PiecePlacedEventArgs.#ctor(TetrisControlProject.Interfaces.IPiece,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            A constructor.
+            </summary>
+            <param name="piece"></param>
+            <param name="gameOver"></param>
+            <param name="pieceWentThrough"></param>
+            <param name="rowsDestroyed"></param>
+        </member>
+        <member name="T:TetrisControlProject.TetrisSquare">
+            <summary>
+            Square in tetris grid represented by its left top corner point and size of its side.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.TetrisSquare.LeftTopCorner">
+            <summary>
+            Gets the left top corner of this square. 
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.TetrisSquare.SideSize">
+            <summary>
+            Gets the size of this square.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.TetrisSquare.SquarePoints">
+            <summary>
+            Gets all points contained by this square.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.TetrisSquare.IsEmpty">
+            <summary>
+            Indicates whether this square is empty (contains no piece color).
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.TetrisSquare.#ctor(System.Drawing.Point,System.Int32)">
+            <summary>
+            A constuctor.
+            Computes square points.
+            </summary>
+            <param name="leftRightCorner"></param>
+            <param name="sideSize"></param>
+        </member>
+        <member name="M:TetrisControlProject.TetrisSquare.getSquarePoints">
+            <summary>
+            Computes all points contained by this square.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TetrisControlProject.Interfaces.ILevelProvider">
+            <summary>
+            Provides levelSettings for each level.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ILevelProvider.GetNextLevelSettings">
+            <summary>
+            Gets next level.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ILevelProvider.HasNextLevel">
+            <summary>
+            Tells whether there is another level.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.ILevelProvider.ContinueAfterLastLevel">
+            <summary>
+            Tells whether the game should continue after this level or if the player won.
+            </summary>
+        </member>
+        <member name="T:TetrisControlProject.Interfaces.ITetrisController">
+            <summary>
+            Controls progress of game.
+            Can be started, paused, unpaused.
+            Informs about changed views and game over event.
+            Can process inputs from user.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.ITetrisController.GamePaused">
+            <summary>
+            Tells whether the game is paused.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.ITetrisController.GameOver">
+            <summary>
+            Tells whether the game ended.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.ITetrisController.TotalScore">
+            <summary>
+            Tells total score.
+            </summary>
+        </member>
+        <member name="E:TetrisControlProject.Interfaces.ITetrisController.GridChangedEvent">
+            <summary>
+            Informs that view of the tetris grid changed.
+            </summary>
+        </member>
+        <member name="E:TetrisControlProject.Interfaces.ITetrisController.ScoreChangedEvent">
+            <summary>
+            Informs that total score changed.
+            </summary>
+        </member>
+        <member name="E:TetrisControlProject.Interfaces.ITetrisController.NextPieceChangedEvent">
+            <summary>
+            Informs that next piece changed.
+            </summary>
+        </member>
+        <member name="E:TetrisControlProject.Interfaces.ITetrisController.GameOverEvent">
+            <summary>
+            Informs that game ended.
+            </summary>
+        </member>
+        <member name="E:TetrisControlProject.Interfaces.ITetrisController.TimerIntervalChanged">
+            <summary>
+            Informs that the interval when the piece should move down changed.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisController.StartGame">
+            <summary>
+            Starts the game.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisController.Unpause">
+            <summary>
+            Restarts paused game.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisController.Pause">
+            <summary>
+            Stops the game until it is unpaused.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisController.ProcessControl(TetrisControlProject.Enums.ControlsEnum)">
+            <summary>
+            Processes user input.
+            </summary>
+            <param name="control"></param>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisController.ProcessTimerTick">
+            <summary>
+            Processes tick of the piece shift timer (information that the piece should move in direction)
+            </summary>
+        </member>
+        <member name="T:TetrisControlProject.Interfaces.ILevelSettings">
+            <summary>
+            Settings for one level.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.ILevelSettings.ScoreProvider">
+            <summary>
+            Provides score for this level.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.ILevelSettings.PieceShiftTime">
+            <summary>
+            Time for a piece to make a step down.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.ILevelSettings.Duration">
+            <summary>
+            How long this level lasts before it is changed for next one.
+            </summary>
+        </member>
+        <member name="T:TetrisControlProject.Interfaces.IPiece">
+            <summary>
+            Represents one Tetris piece.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.IPiece.Width">
+            <summary>
+            Width of Shape array.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.IPiece.Height">
+            <summary>
+            Height of Shape array.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.IPiece.Shape">
+            <summary>
+            Represents shape of the piece by colors.
+            If color is null, there is no color, free square.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.IPiece.Turn(System.Int32)">
+            <summary>
+            Turns Shape array 90degrees counter clockwise.
+            </summary>
+            <param name="times">How many times to turn.</param>
+        </member>
+        <member name="T:TetrisControlProject.Interfaces.IPieceGenerator">
+            <summary>
+            Generates next pieces and directions (from where it comes).
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.IPieceGenerator.GetNextPiece">
+            <summary>
+            Generates next piece.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.IPieceGenerator.GetNextDirection">
+            <summary>
+            Generates next direction.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TetrisControlProject.Interfaces.IScoreProvider">
+            <summary>
+            Gets scores for different situations.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.IScoreProvider.GetScore(TetrisControlProject.Interfaces.IPiece)">
+            <summary>
+            Gets score for placing the piece.
+            </summary>
+            <param name="piece"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.IScoreProvider.GetScore(System.Int32)">
+            <summary>
+            Gets score for destroyed squares.
+            </summary>
+            <param name="squaresDestroyed">How many squares destroyed.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.IScoreProvider.GetScorePieceThrough">
+            <summary>
+            Gets score (it should be negative) for not placing the piece and letting it go through.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TetrisControlProject.Interfaces.ITetrisBox">
+            <summary>
+            Manipulates with given pieces in TetrisGrid.
+            Can add new pieces.
+            Informs about changed views and placed pieces.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.ITetrisBox.TetrisGrid">
+            <summary>
+            The grid where the box moves and adds the pieces.
+            </summary>
+        </member>
+        <member name="E:TetrisControlProject.Interfaces.ITetrisBox.ViewChanged">
+            <summary>
+            Informs about changed view.
+            </summary>
+        </member>
+        <member name="E:TetrisControlProject.Interfaces.ITetrisBox.PiecePlaced">
+            <summary>
+            Informs that current piece was placed.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisBox.MoveInDirection(TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Moves the current piece one step in given direction.
+            </summary>
+            <param name="direction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisBox.Move">
+            <summary>
+            Moves the current piece one step in current direction.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisBox.DropPiece">
+            <summary>
+            Moves the current piece in current direction as many times as possible (before it is placed).
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisBox.AddNewPiece(TetrisControlProject.Interfaces.IPiece,TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Sets another piece and direction to the box.
+            </summary>
+            <param name="piece"></param>
+            <param name="direction"></param>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisBox.GetGridChangedEventArgs">
+            <summary>
+            Gets info about tetris grid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TetrisControlProject.Interfaces.ITetrisGrid">
+            <summary>
+            Represents the grid with pieces.
+            Computes the moves of pieces in all directions.
+            Can save another piece into grid.
+            Provides color array representing the state of pieces.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.ITetrisGrid.Size">
+            <summary>
+            Size of the Grid array.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.ITetrisGrid.BorderSize">
+            <summary>
+            Size of outer borders where the pieces are displayed but the grid itself is not.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.ITetrisGrid.BlockHeight">
+            <summary>
+            Height of one (of 4) parts of tetris grid.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.ITetrisGrid.BlockWidth">
+            <summary>
+            Width of middle square (and also width of parts of tetris grid).
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.ITetrisGrid.Grid">
+            <summary>
+            Array of colors representing pieces in grid.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.ITetrisGrid.BackgroundColor">
+            <summary>
+            Color representing background (place without any piece) in grid.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.ITetrisGrid.BordersColor">
+            <summary>
+            Color representing outer borders.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Interfaces.ITetrisGrid.EdgesColor">
+            <summary>
+            Color representing edges where piece cannot move or be placed.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisGrid.DestroyFilledSquares">
+            <summary>
+            If there are any filled squares, makes them empty and moves the rest of pieces appropriately.
+            </summary>
+            <returns>Number of destroyed squares</returns>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisGrid.GetGridWithPiece(TetrisControlProject.Interfaces.IPiece,System.Drawing.Point)">
+            <summary>
+            Returns the color array with given piece placed in given location. 
+            Not add the piece into own grid.
+            </summary>
+            <param name="piece"></param>
+            <param name="location"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisGrid.AddPieceToGrid(TetrisControlProject.Interfaces.IPiece,System.Drawing.Point)">
+            <summary>
+            Adds the given piece into own grid (saves it)
+            </summary>
+            <param name="piece"></param>
+            <param name="location"></param>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisGrid.GetStartingLocation(TetrisControlProject.Interfaces.IPiece,TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Computes starting location in grid for piece coming in given direction.
+            </summary>
+            <param name="piece"></param>
+            <param name="direction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisGrid.InitShape">
+            <summary>
+            Initializes the color array. Fills background, edges and border colors.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisGrid.CanBePlaced(TetrisControlProject.Interfaces.IPiece,System.Drawing.Point,TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Computes if the piece can be places into given location in grid.
+            </summary>
+            <param name="piece"></param>
+            <param name="location"></param>
+            <param name="direction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisGrid.ShiftPiece(TetrisControlProject.Interfaces.IPiece,System.Drawing.Point@,TetrisControlProject.Enums.DirectionEnum,TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Moves the piece in grid in given direction. 
+            </summary>
+            <param name="piece"></param>
+            <param name="location"></param>
+            <param name="direction"></param>
+            <param name="currentDirection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisGrid.WentThrough(TetrisControlProject.Interfaces.IPiece,System.Drawing.Point,TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Computes if given piece coming from given direction is out of borders.
+            </summary>
+            <param name="currentPiece"></param>
+            <param name="currentPieceLocation"></param>
+            <param name="direction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Interfaces.ITetrisGrid.IsStuckAtStart(TetrisControlProject.Interfaces.IPiece,System.Drawing.Point,TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Computes if the piece is in starting border and cannot move in direction (because there are other piece i.e.).
+            </summary>
+            <param name="currentPiece"></param>
+            <param name="currentPieceLocation"></param>
+            <param name="direction"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TetrisControlProject.SpeedingUpLevelProvider">
+            <summary>
+            Provides serie of levels where every level is faster than the previous one.
+            Score is getting higher as well.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.SpeedingUpLevelProvider.ContinueAfterLastLevel">
+            <summary>
+            Tells whether the game should continue after finishing the last level.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.SpeedingUpLevelProvider.#ctor">
+            <summary>
+            A constructor.
+            Creates array of levels.
+            </summary>
+        </member>
+        <member name="T:TetrisControlProject.BasicScoreProvider">
+            <summary>
+            Provides score for different situations.
+            The bigger the multiplier, the bigger the score.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.BasicScoreProvider.#ctor(System.Int32)">
+            <summary>
+            A constructor.
+            </summary>
+            <param name="multiplier">Score values are multiplied by this value.</param>
+        </member>
+        <member name="M:TetrisControlProject.BasicScoreProvider.GetScore(TetrisControlProject.Interfaces.IPiece)">
+            <summary>
+            Gets score for placing this piece.
+            </summary>
+            <param name="piece"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.BasicScoreProvider.GetScore(System.Int32)">
+            <summary>
+            Gets score for this number of destroyed squares (at once)
+            </summary>
+            <param name="squaresDestroyed"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.BasicScoreProvider.GetScorePieceThrough">
+            <summary>
+            Gets minus score for letting the piece go through the game area.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.BasicLevelSettings.#ctor(TetrisControlProject.Interfaces.IScoreProvider,System.Int32,System.Int32)">
+            <summary>
+            A constructor, sets the score provider, time for piece shift and duration of this level.
+            </summary>
+            <param name="scoreProvider"></param>
+            <param name="pieceShiftTime"></param>
+            <param name="duration"></param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4Directions.Pieces.LeftLPiece.#ctor(System.Drawing.Color)">
+            <summary>
+            A constructor for this class.
+            </summary>
+            <param name="color">Creates piece with given color.</param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4Directions.Pieces.LinePiece.#ctor(System.Drawing.Color)">
+            <summary>
+            A constructor for this class.
+            </summary>
+            <param name="color">Creates piece with given color.</param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4Directions.Pieces.RightLPiece.#ctor(System.Drawing.Color)">
+            <summary>
+            A constructor for this class.
+            </summary>
+            <param name="color">Creates piece with given color.</param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4Directions.Pieces.TPiece.#ctor(System.Drawing.Color)">
+            <summary>
+            A constructor for this class.
+            </summary>
+            <param name="color">Creates piece with given color.</param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4Directions.Pieces.LeftZPiece.#ctor(System.Drawing.Color)">
+            <summary>
+            A constructor for this class.
+            </summary>
+            <param name="color">Creates piece with given color.</param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4Directions.Pieces.RightZPiece.#ctor(System.Drawing.Color)">
+            <summary>
+            A constructor for this class.
+            </summary>
+            <param name="color">Creates piece with given color.</param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4Directions.Pieces.SquarePiece.#ctor(System.Drawing.Color)">
+            <summary>
+            A constructor for this class.
+            </summary>
+            <param name="color">Creates piece with given color.</param>
+        </member>
+        <member name="T:TetrisControlProject.Tetris4DBox">
+            <summary>
+            Manipulates with given pieces in TetrisGrid.
+            Can add new pieces.
+            Informs about changed views and placed pieces.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Tetris4DBox.TetrisGrid">
+            <summary>
+            The grid where the box moves and adds the pieces.
+            </summary>
+        </member>
+        <member name="E:TetrisControlProject.Tetris4DBox.ViewChanged">
+            <summary>
+            Informs about changed view.
+            </summary>
+        </member>
+        <member name="E:TetrisControlProject.Tetris4DBox.PiecePlaced">
+            <summary>
+            Informs that current piece was placed.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DBox.#ctor(TetrisControlProject.Interfaces.ITetrisGrid)">
+            <summary>
+            A constructor. 
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DBox.MoveInDirection(TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Moves the current piece one step in given direction.
+            </summary>
+            <param name="direction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DBox.Move">
+            <summary>
+            Moves the current piece one step in current direction.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DBox.DropPiece">
+            <summary>
+            Moves the current piece in current direction as many times as possible (before it is placed).
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DBox.AddNewPiece(TetrisControlProject.Interfaces.IPiece,TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Adds another piece and direction to the box.
+            </summary>
+            <param name="piece"></param>
+            <param name="direction"></param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DBox.GetGridChangedEventArgs">
+            <summary>
+            Gets info about tetris grid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DBox.isOppositeDirection(TetrisControlProject.Enums.DirectionEnum,TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Decides whether two given directions are the opposite ones.
+            </summary>
+            <param name="direction1"></param>
+            <param name="direction2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DBox.GetGridToDraw">
+            <summary>
+            Gets grid with current piece in it.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TetrisControlProject.Tetris4DController">
+            <summary>
+            Game is controled bz this class.
+            Connects piece generator, tetris box, score provider and level provider and provides communication between these classes.
+            Can start new game, be paused, unpaused.
+            Informs about changed views and game over event.
+            Can process inputs from user.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Tetris4DController.TotalScore">
+            <summary>
+            Tells total score.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Tetris4DController.GamePaused">
+            <summary>
+            Tells whether the game is paused.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Tetris4DController.GameOver">
+            <summary>
+            Tells whether the game ended.
+            </summary>
+        </member>
+        <member name="E:TetrisControlProject.Tetris4DController.GridChangedEvent">
+            <summary>
+            Informs that view of the tetris grid changed.
+            </summary>
+        </member>
+        <member name="E:TetrisControlProject.Tetris4DController.ScoreChangedEvent">
+            <summary>
+            Informs that total score changed.
+            </summary>
+        </member>
+        <member name="E:TetrisControlProject.Tetris4DController.NextPieceChangedEvent">
+            <summary>
+            Informs that next piece changed.
+            </summary>
+        </member>
+        <member name="E:TetrisControlProject.Tetris4DController.GameOverEvent">
+            <summary>
+            Informs that game ended.
+            </summary>
+        </member>
+        <member name="E:TetrisControlProject.Tetris4DController.TimerIntervalChanged">
+            <summary>
+            Informs that the interval when the piece should move down changed.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DController.#ctor">
+            <summary>
+            A constructor.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DController.StartGame">
+            <summary>
+            Sets first level settings, starts measuring level time.
+            Adds a piece to the tetris box.
+            Initializes views.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DController.Unpause">
+            <summary>
+            Restarts the stopwatch.
+            Rises events to restore views.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DController.Pause">
+            <summary>
+            Pauses game.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DController.ProcessControl(TetrisControlProject.Enums.ControlsEnum)">
+            <summary>
+            According to given control, tells the tetris box what to do.
+            </summary>
+            <param name="control"></param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DController.ProcessTimerTick">
+            <summary>
+            Tells tetris box to move piece in current direction.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DController.SetAfterDeserialization(System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Restores state after deserialization.
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DController.SetBeforeSerialization(System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Saves the stopwatch state before serialization.
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DController.tetrisBox_PiecePlaced(System.Object,TetrisControlProject._EventArgs.PiecePlacedEventArgs)">
+            <summary>
+            Occures when current piece was placed in tetris box.
+            Checks if game is over.
+            Computes score.
+            Restores views.
+            Checks if level is over - can set settings for another level.
+            Adds next piece to tetris box and gets next piece and next direction.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DController.setSettings(TetrisControlProject.Interfaces.ILevelSettings)">
+            <summary>
+            Sets the next level.
+            </summary>
+            <param name="settings"></param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DController.tetrisBox_ViewChanged(System.Object,TetrisControlProject._EventArgs.GridChangedEventArgs)">
+            <summary>
+            If view of tetris box changes, invokes own event to report changed view.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:TetrisControlProject.Tetris4DGrid">
+            <summary>
+            Represents the grid with pieces.
+            Computes the moves of pieces in all 4 directions.
+            Can destroy filled pieces and move the rest of pieces correspondingly.
+            Provides color array for views.
+            Can save another piece into grid.
+            Provides color array representing the state of pieces.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Tetris4DGrid.Size">
+            <summary>
+            Size of the Grid array.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Tetris4DGrid.BorderSize">
+            <summary>
+            Size of outer borders where the pieces are displayed but the grid itself is not.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Tetris4DGrid.BlockHeight">
+            <summary>
+            Height of one (of 4) parts of tetris grid.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Tetris4DGrid.BlockWidth">
+            <summary>
+            Width of middle square (and also width of parts of tetris grid).
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Tetris4DGrid.Grid">
+            <summary>
+            Array of colors representing pieces in grid.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Tetris4DGrid.BackgroundColor">
+            <summary>
+            Color representing background (place without any piece) in grid.
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Tetris4DGrid.EdgesColor">
+            <summary>
+            Color representing edges where piece cannot move or be placed (places out of game area).
+            </summary>
+        </member>
+        <member name="P:TetrisControlProject.Tetris4DGrid.BordersColor">
+            <summary>
+            Color representing outer borders.
+            Piece is placed there at the beginning and game is over if piece is stuck in the border.
+            Borders should not be displayed in views.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.#ctor(System.Int32,System.Int32)">
+            <summary>
+            A constuctor.
+            Computes Size of the whole game area from height and width of block.
+            Sets background, edges and borders color.
+            Initializes colors in grid (borders, edges, background).
+            Computes all squares in grid.
+            </summary>
+            <param name="blockHeight"></param>
+            <param name="blockWidth"></param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.DestroyFilledSquares">
+            <summary>
+            Finds filled squares, destroyes them and moves rest of pieces to the center.
+            New filled squares can be created, so this repeats while there are some filled squares.
+            </summary>
+            <returns>Number of destroyed squares.</returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.GetGridWithPiece(TetrisControlProject.Interfaces.IPiece,System.Drawing.Point)">
+            <summary>
+            Returns array of colors representing current state of grid with extra piece placed in given location.
+            </summary>
+            <param name="piece"></param>
+            <param name="location"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.GetStartingLocation(TetrisControlProject.Interfaces.IPiece,TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Places given piece in the middle of the border (with regard to the given direction).
+            </summary>
+            <param name="piece"></param>
+            <param name="direction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.InitShape">
+            <summary>
+            Filles the color array with background, borders and edges colors.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.AddPieceToGrid(TetrisControlProject.Interfaces.IPiece,System.Drawing.Point)">
+            <summary>
+            Saves given piece into grid.
+            </summary>
+            <param name="piece"></param>
+            <param name="location"></param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.WentThrough(TetrisControlProject.Interfaces.IPiece,System.Drawing.Point,TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Tells whether piece is in the border opposite to the starting location.
+            </summary>
+            <param name="piece"></param>
+            <param name="location"></param>
+            <param name="direction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.IsStuckAtStart(TetrisControlProject.Interfaces.IPiece,System.Drawing.Point,TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Tells whether piece is in the starting border and blocked by another piece.
+            </summary>
+            <param name="piece"></param>
+            <param name="location"></param>
+            <param name="direction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.CanBePlaced(TetrisControlProject.Interfaces.IPiece,System.Drawing.Point,TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Tells whether given piece in given location can fit into rid (if there is no other piece or edge in conflict)
+            </summary>
+            <param name="piece"></param>
+            <param name="location"></param>
+            <param name="currentDirection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.ShiftPiece(TetrisControlProject.Interfaces.IPiece,System.Drawing.Point@,TetrisControlProject.Enums.DirectionEnum,TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Checks if the piece can be moved and if so, it moves the piece.
+            </summary>
+            <param name="piece"></param>
+            <param name="location"></param>
+            <param name="direction"></param>
+            <param name="currentDirection"></param>
+            <returns>Returns if piece was shifted or not.</returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.createMiddleSquare">
+            <summary>
+            Creates the middle square where pieces cannot move through.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.CreateBorders">
+            <summary>
+            Fills borders into the color array.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.isCollision(TetrisControlProject.Interfaces.IPiece,System.Drawing.Point,TetrisControlProject.Enums.DirectionEnum,TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Checks whether there would be collision when moving the piece in the direction. 
+            </summary>
+            <param name="piece"></param>
+            <param name="location"></param>
+            <param name="direction"></param>
+            <param name="currentDirection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.getEdges(TetrisControlProject.Enums.DirectionEnum,System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+            <summary>
+            Computes the area where a piece can move when going in given direction.
+            </summary>
+            <param name="currentDirection"></param>
+            <param name="maxRow"></param>
+            <param name="maxCol"></param>
+            <param name="minRow"></param>
+            <param name="minCol"></param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.getOuterPoints(TetrisControlProject.Interfaces.IPiece,TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            According to the direction of move, gets points of the piece which are on the outside.
+            </summary>
+            <param name="piece"></param>
+            <param name="direction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.getConflictPoints(System.Collections.Generic.List{System.Drawing.Point},System.Drawing.Point,TetrisControlProject.Enums.DirectionEnum)">
+            <summary>
+            Gets potential points where a conflict can happen when moving the piece.
+            </summary>
+            <param name="outerPoints"></param>
+            <param name="location"></param>
+            <param name="direction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.destroySquares(System.Collections.Generic.List{TetrisControlProject.TetrisSquare})">
+            <summary>
+            Replaces pieces colors in this square by background color.
+            </summary>
+            <param name="squares"></param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.isEmpty(TetrisControlProject.TetrisSquare)">
+            <summary>
+            Decides whether this square is empty (contains only background, edges and borders).
+            </summary>
+            <param name="square"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.findFilledSquares">
+            <summary>
+            Gets all squares that are fully filled with piece colors.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.getAllSquaresInGrid">
+            <summary>
+            Computes all squares in grid sorted from the smallest.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.getSquare(System.Drawing.Point)">
+            <summary>
+            Gets the square in grid containing given point.
+            </summary>
+            <param name="point"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.swapSquares(TetrisControlProject.TetrisSquare,TetrisControlProject.TetrisSquare)">
+            <summary>
+            Makes outer square empty (replaces it with background color).
+            Copies colors from outer square to the inner square.
+            Treats corners differently - blends all colors from the corner of the outer square into one color 
+               and uses this color for corresponding corner of the inner square.
+            Marks the outer square as empty and inner square not empty.
+            </summary>
+            <param name="outerSquare"></param>
+            <param name="innerSquare"></param>
+        </member>
+        <member name="M:TetrisControlProject.Tetris4DGrid.markAllEmptySquares">
+            <summary>
+            For each square in grid, markes it as empty if the are no pieces colors and as not empty otherwise.
+            </summary>
+        </member>
+        <member name="T:TetrisControlProject.RandomPieceGenerator">
+            <summary>
+            Generates pieces from its library randomly.
+            Uses standard Tetris pieces.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.RandomPieceGenerator.#ctor">
+            <summary>
+            A constructor. Creates the library.
+            </summary>
+        </member>
+        <member name="M:TetrisControlProject.RandomPieceGenerator.GetNextPiece">
+            <summary>
+            Generates next piece from the library.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.RandomPieceGenerator.GetNextDirection">
+            <summary>
+            Generates the next direction from DirectionEnum.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TetrisControlProject.RandomPieceGenerator.initLibrary">
+            <summary>
+            Creates the library of pieces - pairs of name and color.
+            </summary>
+        </member>
+    </members>
+</doc>

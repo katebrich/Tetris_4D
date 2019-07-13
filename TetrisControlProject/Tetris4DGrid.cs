@@ -265,16 +265,12 @@ namespace TetrisControlProject
             {
                 case DirectionEnum.Up:
                     return location.X < BorderSize;
-                    break;
                 case DirectionEnum.Down:
                     return location.X + piece.Height > Size - BorderSize - 1;
-                    break;
                 case DirectionEnum.Right:
                     return location.Y + piece.Width > Size - 1 - BorderSize;
-                    break;
                 case DirectionEnum.Left:
                     return location.Y < BorderSize;
-                    break;
                 default:
                     throw new NotImplementedException();
             }
@@ -293,16 +289,12 @@ namespace TetrisControlProject
             {
                 case DirectionEnum.Down:
                     return location.X < BorderSize;
-                    break;
                 case DirectionEnum.Up:
                     return location.X + piece.Height - 1 > Size - BorderSize - 1;
-                    break;
                 case DirectionEnum.Left:
                     return location.Y + piece.Width - 1 > Size - BorderSize - 1;
-                    break;
                 case DirectionEnum.Right:
                     return location.Y < BorderSize;
-                    break;
                 default:
                     throw new NotImplementedException();
             }

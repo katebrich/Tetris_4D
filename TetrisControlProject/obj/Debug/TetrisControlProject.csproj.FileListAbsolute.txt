@@ -8,3 +8,9 @@ C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\TetrisControlProject\bin\
 C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\TetrisControlProject\obj\Debug\TetrisControlProject.csprojResolveAssemblyReference.cache
 C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\TetrisControlProject\obj\Debug\TetrisControlProject.dll
 C:\Users\Káč\Documents\Škola\Zápočťáky\Tetris4D\TetrisControlProject\obj\Debug\TetrisControlProject.pdb
+C:\Users\kateb\Documents\Desktop\Tetris_4D_github\Tetris_4D\TetrisControlProject\bin\Debug\TetrisControlProject.dll
+C:\Users\kateb\Documents\Desktop\Tetris_4D_github\Tetris_4D\TetrisControlProject\bin\Debug\TetrisControlProject.pdb
+C:\Users\kateb\Documents\Desktop\Tetris_4D_github\Tetris_4D\TetrisControlProject\obj\Debug\TetrisControlProject.csprojAssemblyReference.cache
+C:\Users\kateb\Documents\Desktop\Tetris_4D_github\Tetris_4D\TetrisControlProject\obj\Debug\TetrisControlProject.csproj.CoreCompileInputs.cache
+C:\Users\kateb\Documents\Desktop\Tetris_4D_github\Tetris_4D\TetrisControlProject\obj\Debug\TetrisControlProject.dll
+C:\Users\kateb\Documents\Desktop\Tetris_4D_github\Tetris_4D\TetrisControlProject\obj\Debug\TetrisControlProject.pdb
