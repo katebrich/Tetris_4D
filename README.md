@@ -10,7 +10,7 @@ Your task is to arrange the tiles around the middle square, possibly without gap
 Check out the Controls to see the keyboard settings.  
 It is also possible to save your progress and load the game later.
 
-<img src="menu.png" width="500">
+<img src="menu.png" width="300">
 
 ## Installation
 No installation needed - simply run the **Release/Tetris4D.exe** file.
@@ -20,4 +20,4 @@ This game was created as a semestral programming project in the second year of m
 
 The documentation is unfortunatelly available only in Czech, but the comments in code should help a lot.
 
-<img src="diagram.png" width="500">
+<img src="diagram.png" width="800">
