@@ -1,5 +1,9 @@
 # Tetris 4D
 
+## Notes
+Beware! This game was created as a semestral programming project in the second year of my Bachelors studies. I didn't know much about programming principles back then - the code would benefit from some refactoring. I hope I get back to it some day.
+The documentation is unfortunatelly available only in Czech, but the comments in code should help a lot.
+
 ## The game
 Tetris 4Directions is my version of Tetris - the only little difference is that the tiles "fall" from all 4 directions! 
 
@@ -15,9 +19,5 @@ It is also possible to save your progress and load the game later.
 ## Installation
 No installation needed - simply run the **Release/Tetris4D.exe** file.
 
-## Notes
-This game was created as a semestral programming project in the second year of my Bachelors studies. I didn't know much about programming principles back then - the code would benefit from some refactoring. I hope I get back to it some day.
-
-The documentation is unfortunatelly available only in Czech, but the comments in code should help a lot.
 
 <img src="diagram.png" width="800">
